@@ -1,0 +1,113 @@
+algoritmo missaoTres;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+	inteiro total, aprovados, reprovados, menu;
+	real nota, maior_nota, menor_nota;
+	caracter voltar_menu;
+
+	// Instruções
+	total = 0;
+	aprovados = 0;
+	reprovados = 0;
+	maior_nota = 0;
+	menor_nota = 11;
+
+	escreval("Olá usuário, seja bem vindo ao programa");
+	escreval("Insira aqui a nota do primeiro aluno:");
+	leia(nota);
+	limpaTela();
+
+	enquanto(nota<0 ou nota>10)faca
+	se (nota<0)entao
+		limpaTela();
+		escreval("Nota inserida incompatível. Digite um número entre 0 e 10.");
+	fimSe
+	se	(nota>10)entao
+		limpaTela();
+		escreval("Nota inserida incompatível. Digite um número entre 0 e 10.");
+	fimSe
+	leia(nota);
+	fimEnquanto
+
+	faca
+		se (nota<5) entao
+		reprovados = reprovados + 1;
+		fimSe
+		se (nota>=5) entao
+		aprovados = aprovados + 1;
+		fimSe
+		se (nota>maior_nota) entao
+			maior_nota = nota;
+		fimSe
+		se (nota<menor_nota) entao
+			menor_nota = nota;
+		fimSe
+
+		total = (aprovados + reprovados);
+		limpaTela();
+		escreval("Insira a nota do " + (total+1) + " aluno. Após executar essa ação insira qualquer número menor que 0 para voltar ao menu principal");
+		leia(nota);
+		enquanto(nota>=0);
+
+		faca
+		limpaTela();
+		escreval("Olá, seja bem vindo ao menu de opções");
+		escreval("Digite 1 para o Número Total de Alunos"); 
+		escreval("Digite 2 para a Quantidade de Aprovados");
+		escreval("Digite 3 para a Quantidade de Repovados");
+		escreval("Digite 4 para a Maior Nota");
+		escreval("Digite 5 para a Menor Nota");
+		escreval("Digite 6 para sair do Menu");
+		leia(menu);
+		limpaTela();
+
+		escolha (menu)
+		caso 1
+			limpaTela();
+			escreval("Total de alunos é: " + (reprovados + aprovados));
+			escreval("Insira qualquer caracter para voltar ao menu principal.");
+			leiaCaracter(voltar_menu);
+			interrompa;
+		caso 2
+			limpaTela();
+			escreval("O total de alunos aprovados é: " + aprovados);
+			escreval("Insira qualquer caracter para voltar ao menu principal.");
+			leiaCaracter(voltar_menu);
+			interrompa;
+		caso 3
+			limpaTela();
+			escreval("O total de alunos reprovados é: " + reprovados);
+			escreval("Insira qualquer caracter para voltar ao menu principal.");
+			leiaCaracter(voltar_menu);
+			interrompa;
+		caso 4 
+			limpaTela();
+			escreval("A maior nota é: " + maior_nota);
+			escreval("Insira qualquer caracter para voltar ao menu principal.");
+			leiaCaracter(voltar_menu);
+			interrompa;
+		caso 5
+			limpaTela();
+			escreval("A menor nota é: " + menor_nota);
+			escreval("Insira qualquer caracter para voltar ao menu principal.");
+			leiaCaracter(voltar_menu);
+			interrompa;
+		caso 6 
+			limpaTela();
+			escreval("Sair");
+			interrompa;
+		outroCaso
+			limpaTela();
+			escreval("Comando inexistente");
+			escreval("Insira qualquer caracter para voltar ao menu principal");
+			leiaCaracter(voltar_menu);
+		fimEscolha
+		enquanto (menu !=6);
+		escreval ("That's_all_Folks");
+fimPrincipal
