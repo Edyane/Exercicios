@@ -1,0 +1,54 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  Criar um Menu de Opções
+//  Entrada :  Quatros casos 
+//  Saída   :  Fim
+
+
+principal
+	// Declarações
+	inteiro menu, num1, num2;
+	caracter op; // *
+	real result, peso, altura;
+
+	// Instruções
+	escreval("Olá, seja bem vindo ao menu de opções");
+	escreval("Digite 1 para informações");
+	escreval("Digite 2 para realizar o cálculo do seu IMC");
+	escreval("Digite 3 para realizar uma operação de multiplicação");
+	escreval("Digite 4 para sair do menu");
+	leia(menu);
+		
+		
+	escolha(menu)
+		caso 1
+			escreval("Olá, meu nome é Edyane");
+			escreval("Minha matrícula é 202042945");
+			escreval("Estou no primeiro semestre de engenharia");
+			interrompa;
+		
+		caso 2
+			escreval("Vamos calcular o seu IMC!");
+			escreval("Digite o seu peso:");
+			leia(peso);
+			escreval("Digite a sua altura:");
+			leia(altura);
+			result=peso/(altura*altura);
+			escreval("o resultado é: " + result);
+		interrompa;
+		
+		caso 3 
+			escreval("Vamos realizar uma multiplicacao");
+			escreval("Escolha um número:");
+			leia(num1);
+			escreval("Escolha outro número:");
+			leia(num2);
+			result = num1 * num2;
+			escreval("num1 * num2 = " + result);
+		interrompa;
+		
+		caso 4
+		escreval("Sair do Menu de Opções");
+		interrompa;
+	fimEscolha
+fimPrincipal
